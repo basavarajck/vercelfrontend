@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import api from "../api/axios";
@@ -29,7 +29,7 @@ const AdminAuditLogs = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -125,7 +125,7 @@ const AdminAuditLogs = () => {
         )}
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

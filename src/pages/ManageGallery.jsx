@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/gallery.css";
@@ -50,7 +50,7 @@ const ManageGallery = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         <div className="gallery-page">
@@ -131,7 +131,7 @@ const ManageGallery = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

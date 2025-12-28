@@ -6,8 +6,14 @@
     padding: 20px 16px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     z-index: 100;
+}
+
+/* HIDDEN STATE (DESKTOP) */
+.sidebar.closed {
+    margin-left: -240px;
+    /* Hide off-screen to left */
 }
 
 /* HEADER */

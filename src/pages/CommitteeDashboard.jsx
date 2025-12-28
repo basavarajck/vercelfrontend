@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import "../styles/dashboard.css";
 
@@ -16,7 +16,7 @@ const CommitteeDashboard = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -40,7 +40,7 @@ const CommitteeDashboard = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

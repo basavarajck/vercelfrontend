@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/dashboard.css"; // 👈 new CSS
@@ -38,7 +38,7 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -113,7 +113,7 @@ const AdminDashboard = () => {
 
         </div>
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

@@ -37,9 +37,9 @@ const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
       {/* MOBILE BACKDROP */}
-      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
+      {isOpen && window.innerWidth <= 768 && <div className="sidebar-overlay" onClick={onClose} />}
 
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+      <aside className={`sidebar ${isOpen ? "open" : "closed"}`}>
         {/* HEADER */}
         <div className="sidebar-header">
           <div>

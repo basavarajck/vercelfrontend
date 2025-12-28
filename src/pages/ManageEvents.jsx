@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/events.css";
@@ -58,7 +58,7 @@ const ManageEvents = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
         <div className="events-page">
 
@@ -176,7 +176,7 @@ const ManageEvents = () => {
           </div>
         </div>
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

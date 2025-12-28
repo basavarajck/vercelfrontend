@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { getUser, isAuthenticated } from "../auth/authUtils";
+import Layout from "../components/Layout";
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   if (!isAuthenticated()) {
@@ -12,7 +13,11 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
     return <Navigate to="/unauthorized" replace />;
   }
 
-  return children;
+  return (
+    <Layout>
+      {children}
+    </Layout>
+  );
 };
 
 export default ProtectedRoute;

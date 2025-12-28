@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/form.css";
@@ -37,7 +37,7 @@ const ManageAnnouncements = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -102,7 +102,7 @@ const ManageAnnouncements = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

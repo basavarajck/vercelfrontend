@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Layout from "../components/Layout";
+// Layout removed (centralized in ProtectedRoute)
 import PageWrapper from "../components/PageWrapper";
 import "../styles/dashboard.css";
 
@@ -15,7 +15,7 @@ const VillagerDashboard = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -40,7 +40,7 @@ const VillagerDashboard = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

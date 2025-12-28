@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/form.css";
@@ -52,7 +52,7 @@ const CommitteeAddExpense = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -143,7 +143,7 @@ const CommitteeAddExpense = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

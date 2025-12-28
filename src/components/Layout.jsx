@@ -4,7 +4,8 @@ import Sidebar from "./Sidebar";
 import "../styles/layout.css";
 
 const Layout = ({ children }) => {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  // Default to closed on mobile (<768), open on desktop
+  const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth > 768);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);

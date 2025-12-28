@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import api from "../api/axios";
@@ -44,7 +44,7 @@ const VillagerAnnouncements = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
         <div className="announcements-page">
           <div className="announcements-header">
@@ -86,7 +86,7 @@ const VillagerAnnouncements = () => {
           </div>
         </div>
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import api from "../api/axios";
@@ -35,7 +35,7 @@ const AdminApproveExpenses = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         {/* HEADER */}
@@ -113,7 +113,7 @@ const AdminApproveExpenses = () => {
         )}
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

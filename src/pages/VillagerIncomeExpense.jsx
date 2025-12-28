@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import api from "../api/axios";
@@ -29,7 +29,7 @@ const VillagerIncomeExpense = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
       <h1 className="text-2xl font-semibold mb-6">
         Temple Income & Expenses
@@ -91,7 +91,7 @@ const VillagerIncomeExpense = () => {
         </>
       )}
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import api from "../api/axios";
@@ -24,7 +24,7 @@ const VillagerEvents = () => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
 
         <div className="villager-events-page">
@@ -90,7 +90,7 @@ const VillagerEvents = () => {
         </div>
 
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 

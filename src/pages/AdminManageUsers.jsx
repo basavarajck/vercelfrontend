@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Layout from "../components/Layout";
+// Layout removed
 import PageWrapper from "../components/PageWrapper";
 import api from "../api/axios";
 import "../styles/table.css";
@@ -22,7 +22,7 @@ const AdminManageUsers = () => {
   };
 
   return (
-    <Layout>
+    <>
       <PageWrapper>
         {/* HEADER */}
         <div className="page-header">
@@ -84,7 +84,7 @@ const AdminManageUsers = () => {
           </table>
         </div>
       </PageWrapper>
-    </Layout>
+    </>
   );
 };
 
