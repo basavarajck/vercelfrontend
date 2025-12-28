@@ -31,6 +31,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       { label: "Reports", path: "/admin/reports" },
       { label: "Audit Logs", path: "/admin/activity-logs" },
       { label: "Manage Users", path: "/admin/users" },
+      { label: "Gallery Upload", path: "/committee/gallery" }, // Admin shares committee route
     ],
   };
 

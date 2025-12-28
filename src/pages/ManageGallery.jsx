@@ -112,20 +112,34 @@ const ManageGallery = () => {
                       controls
                     />
                   )}
+                  {/* Delete Button Overlay - Guaranteed Visibility */}
+                  <button
+                    onClick={() => deleteMedia(m._id)}
+                    className="delete-overlay-btn"
+                    title="Delete Permanently"
+                    style={{
+                      position: "absolute",
+                      top: "10px",
+                      right: "10px",
+                      backgroundColor: "red",
+                      color: "white",
+                      border: "none",
+                      padding: "8px",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      zIndex: 10,
+                      fontWeight: "bold",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.5)"
+                    }}
+                  >
+                    🗑️
+                  </button>
                 </div>
 
                 <div className="gallery-info">
                   <h3>{m.title}</h3>
 
-                  <div className="gallery-actions">
-                    <button
-                      onClick={() => deleteMedia(m._id)}
-                      className="delete-btn"
-                      title="Delete Permanently"
-                    >
-                      🗑️
-                    </button>
-                  </div>
+
                 </div>
               </div>
             ))}

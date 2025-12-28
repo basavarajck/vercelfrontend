@@ -95,6 +95,11 @@
 }
 
 /* MEDIA */
+.media-wrapper {
+    position: relative;
+    /* For absolute button */
+}
+
 .media-wrapper img,
 .media-wrapper video {
     width: 100%;
