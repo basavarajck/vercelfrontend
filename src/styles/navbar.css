@@ -78,12 +78,21 @@
 .hamburger-btn {
     display: none;
     /* Hidden on Desktop */
-    background: none;
+    background: transparent;
     border: none;
-    font-size: 24px;
     cursor: pointer;
     color: #111827;
-    padding: 4px;
+    /* Dark Gray */
+    padding: 8px;
+    margin-right: 8px;
+    /* Space between btn and title */
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-btn:hover {
+    background-color: #f3f4f6;
 }
 
 @media (max-width: 768px) {
@@ -93,7 +102,6 @@
 
     .tagline {
         display: none;
-        /* Save space on mobile */
     }
 
     .navbar-left h1 {
@@ -102,10 +110,10 @@
 
     .user-info {
         display: none;
-        /* Hide name on super small screens if needed, or keep it */
     }
 
     .hamburger-btn {
-        display: block;
+        display: flex;
+        /* Force flex to center SVG */
     }
 }
