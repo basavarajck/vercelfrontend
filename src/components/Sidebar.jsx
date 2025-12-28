@@ -1,0 +1,66 @@
+import { Link, useLocation } from "react-router-dom";
+import { getUser } from "../auth/authUtils";
+import "../styles/sidebar.css";
+
+const Sidebar = () => {
+  const user = getUser();
+  const location = useLocation();
+
+  const menu = {
+    villager: [
+      { label: "Dashboard", path: "/villager" },
+      { label: "Income & Expense", path: "/villager/income-expense" },
+      { label: "Announcements", path: "/villager/announcements" },
+      { label: "Events", path: "/villager/events" },
+      { label: "Gallery", path: "/villager/gallery" },
+      { label: "Complaints", path: "/villager/complaints" },
+    ],
+    committee: [
+      { label: "Dashboard", path: "/committee" },
+      { label: "Add Income", path: "/committee/income" },
+      { label: "Add Expense", path: "/committee/expense" },
+      { label: "Complaints", path: "/committee/complaints" },
+      { label: "Events", path: "/committee/events" },
+      { label: "Announcements", path: "/committee/announcements" },
+      { label: "Gallery Upload", path: "/committee/gallery" },
+    ],
+    admin: [
+      { label: "Dashboard", path: "/admin" },
+      { label: "Approve Expenses", path: "/admin/expenses" },
+      { label: "Lock Month", path: "/admin/lock" },
+      { label: "Reports", path: "/admin/reports" },
+      { label: "Audit Logs", path: "/admin/activity-logs" },
+      { label: "Manage Users", path: "/admin/users" },
+    ],
+  };
+
+  return (
+    <aside className="sidebar">
+      {/* HEADER */}
+      <div className="sidebar-header">
+        <h2>Temple Portal</h2>
+        <p>{user?.role?.toUpperCase()}</p>
+      </div>
+
+      {/* MENU */}
+      <nav className="sidebar-menu">
+        {menu[user?.role]?.map((item) => {
+          const isActive = location.pathname === item.path;
+
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`sidebar-link ${isActive ? "active" : ""}`}
+            >
+              <span>{item.label}</span>
+              <span className="arrow">→</span>
+            </Link>
+          );
+        })}
+      </nav>
+    </aside>
+  );
+};
+
+export default Sidebar;

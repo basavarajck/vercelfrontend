@@ -1,0 +1,104 @@
+/* --- COMPACT MULTI-ROW SCROLLING --- */
+.multi-row-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Reduced gap between rows */
+    padding: 20px 0;
+    /* Reduced vertical padding */
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.gallery-marquee {
+    display: flex;
+    width: max-content;
+    user-select: none;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 15px;
+    /* Reduced gap between images */
+    padding-right: 15px;
+}
+
+/* Animations (Keep same logic) */
+.gallery-marquee.left .marquee-content {
+    animation: scroll-left 35s linear infinite;
+}
+
+.gallery-marquee.right .marquee-content {
+    animation: scroll-right 35s linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* --- REDUCED CARD SIZE --- */
+.gallery-card {
+    position: relative;
+    /* Reduced Dimensions */
+    min-width: 260px;
+    height: 180px;
+    border-radius: 16px;
+    /* Slightly smaller radius for smaller size */
+    overflow: hidden;
+    background: #e2e8f0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-card img,
+.gallery-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay scaled down for the smaller div */
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    /* Reduced padding */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay h3 {
+    color: white;
+    font-size: 0.95rem;
+    /* Smaller font for smaller card */
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Pause on hover stays same */
+.gallery-marquee:hover .marquee-content {
+    animation-play-state: paused;
+}

@@ -1,0 +1,211 @@
+/* PAGE */
+.income-expense-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* HEADER */
+.income-expense-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.income-expense-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.income-expense-header p {
+    font-size: 16px;
+    color: #6b7280;
+}
+
+/* SUMMARY GRID */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+/* SUMMARY CARDS */
+.summary-card {
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    opacity: 0.9;
+}
+
+.summary-card p {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* Income Card */
+.summary-card.income {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    color: #065f46;
+}
+
+.summary-card.income h3 {
+    color: #047857;
+}
+
+/* Expense Card */
+.summary-card.expense {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    color: #991b1b;
+}
+
+.summary-card.expense h3 {
+    color: #b91c1c;
+}
+
+/* Balance Card (Orange Theme) */
+.summary-card.balance {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    color: #9a3412;
+}
+
+.summary-card.balance h3 {
+    color: #ea580c;
+}
+
+
+/* TABLE SECTION */
+.table-section {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.table-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1f2937;
+    padding-left: 8px;
+    border-left: 4px solid #f97316;
+}
+
+/* TABLE STYLING */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+thead th {
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #fff7ed;
+    /* Light orange tint on hover */
+}
+
+td {
+    padding: 18px 16px;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+}
+
+/* Currency Styling */
+.amount {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+.amount.positive {
+    color: #16a34a;
+}
+
+.amount.negative {
+    color: #dc2626;
+}
+
+/* STATUS BADGES */
+.status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.approved {
+    background: #dcfce7;
+    color: #15803d;
+    box-shadow: 0 2px 5px rgba(21, 128, 61, 0.1);
+}
+
+.status.pending {
+    background: #ffedd5;
+    color: #c2410c;
+    box-shadow: 0 2px 5px rgba(194, 65, 12, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .summary-grid {
+        gap: 16px;
+    }
+
+    .summary-card {
+        padding: 20px;
+    }
+
+    .summary-card p {
+        font-size: 26px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .table-section {
+        padding: 16px;
+        overflow-x: auto;
+    }
+}

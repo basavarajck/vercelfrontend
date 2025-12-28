@@ -1,0 +1,167 @@
+/* PAGE HEADER */
+.page-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-header p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* TABLE CARD */
+.table-card {
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* TABLE */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-table thead {
+    background: #f9fafb;
+}
+
+.modern-table th {
+    text-align: left;
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 14px 16px;
+}
+
+.modern-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #111827;
+    border-top: 1px solid #e5e7eb;
+}
+
+.modern-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* USER CELL */
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #ffedd5;
+    color: #9a3412;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+/* ROLE BADGES */
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.role-badge.villager {
+    background: #ecfeff;
+    color: #0f766e;
+}
+
+.role-badge.committee {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.role-badge.admin {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* SELECT */
+.role-select {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    background: #ffffff;
+}
+
+.role-select:focus {
+    outline: none;
+    border-color: #f97316;
+}
+
+/* TEXT */
+.muted {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* APPROVE BUTTON */
+.approve-btn {
+    background: #16a34a;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.approve-btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+/* FILTER BAR */
+.filter-bar {
+    margin: 16px 0 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    background: #ffffff;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+    background: #2563eb;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+}

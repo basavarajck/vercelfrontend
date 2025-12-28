@@ -1,0 +1,305 @@
+/* --- FULL SCREEN AUTH LAYOUT --- */
+.split-auth-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* --- BACKGROUND IMAGE LAYER --- */
+.auth-visual {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.auth-visual .bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomSlow 30s infinite alternate;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+    /* Darker overlay to let the glass card pop */
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.6));
+    z-index: 1;
+}
+
+/* --- BRANDING (Floating Left) --- */
+.visual-overlay .branding-content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    max-width: 550px;
+    z-index: 2;
+    color: white;
+}
+
+.branding-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 24px 0;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.branding-content p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+.badge {
+    background: #f97316;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.5);
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+/* --- FORM LAYER --- */
+.auth-form-side {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* Push form to the right side */
+    padding: 5% 10%;
+    pointer-events: none;
+}
+
+/* --- GLASS FORM CARD --- */
+.auth-card-modern {
+    pointer-events: auto;
+    width: 100%;
+    max-width: 440px;
+
+    /* GLASSMORPHISM STYLE */
+    background: rgba(255, 255, 255, 0.1);
+    /* Lighter, glassy background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    padding: 48px;
+    border-radius: 32px;
+    box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.auth-card-modern:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- HEADER --- */
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-header h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.auth-header p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+.logo-circle {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+}
+
+/* --- INPUTS ON GLASS --- */
+.input-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    padding-left: 4px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    /* Dark styling */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.4);
+    border-color: var(--primary, #f97316);
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* AUTOFILL FIX FOR CHROME */
+.input-group input:-webkit-autofill,
+.input-group input:-webkit-autofill:hover,
+.input-group input:-webkit-autofill:focus,
+.input-group input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #1e293b inset !important;
+    /* Matches dark bg */
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* --- BUTTON --- */
+.submit-btn-glow {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+    margin-top: 8px;
+}
+
+.submit-btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(249, 115, 22, 0.5);
+    filter: brightness(1.1);
+}
+
+.submit-btn-glow:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* --- FOOTER --- */
+.auth-switch {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-switch span {
+    color: #f97316;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: color 0.2s;
+}
+
+.auth-switch span:hover {
+    color: #fb923c;
+    text-decoration: underline;
+}
+
+/* --- BANNERS --- */
+.error-banner {
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    color: #fecaca;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+}
+
+.success-banner {
+    background: rgba(22, 163, 74, 0.1);
+    border: 1px solid rgba(22, 163, 74, 0.3);
+    color: #bbf7d0;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes zoomSlow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .visual-overlay {
+        background: rgba(15, 23, 42, 0.9);
+    }
+
+    .branding-content {
+        display: none;
+    }
+
+    .auth-form-side {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .auth-card-modern {
+        background: rgba(17, 24, 39, 0.6);
+    }
+}

@@ -1,0 +1,23 @@
+/* ROOT LAYOUT */
+.app-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f9fafb;
+}
+
+/* BODY */
+.app-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    /* 🔒 important */
+}
+
+/* CONTENT */
+.app-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: #f9fafb;
+}
