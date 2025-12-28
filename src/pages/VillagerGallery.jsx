@@ -23,7 +23,10 @@ const VillagerGallery = () => {
     const fetchMedia = async () => {
       try {
         const res = await api.get("/gallery");
-        const activeMedia = res.data.filter((m) => m.isActive !== false);
+        // Only show Active items AND items served from Cloudinary
+        const activeMedia = res.data.filter(
+          (m) => m.isActive !== false && m.fileUrl && m.fileUrl.includes("cloudinary.com")
+        );
         setMedia(activeMedia.length > 0 ? activeMedia : fallbackImages);
       } catch {
         console.error("Failed to load gallery");
