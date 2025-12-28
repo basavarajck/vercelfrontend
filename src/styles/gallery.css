@@ -115,23 +115,35 @@
     font-weight: 600;
 }
 
-/* BUTTONS */
-.gallery-info .danger {
+/* ACTIONS */
+.gallery-actions {
+    margin-top: 8px;
+    /* Was missing or malformed in view */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-btn {
     background: #fee2e2;
-    color: #991b1b;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
+    border: 1px solid #fecaca;
+    color: #ef4444;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    /* Ensuring visibility */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    min-height: 32px;
 }
 
-.gallery-info .danger:hover {
+.delete-btn:hover {
     background: #fecaca;
+    color: #b91c1c;
 }
 
-/* STATUS */
-.gallery-info .status {
-    font-size: 12px;
-    font-weight: 700;
-    color: #6b7280;
-}
+/* REMOVE OLD STYLES */
+/* .gallery-info .danger { ... } and .status { ... } might be obsolete but keeping safely or overwriting is fine */

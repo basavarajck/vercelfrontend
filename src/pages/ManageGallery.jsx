@@ -43,10 +43,14 @@ const ManageGallery = () => {
     }
   };
 
-  const disableMedia = async (id) => {
-    if (!window.confirm("Disable this media item?")) return;
-    await api.delete(`/gallery/${id}`);
-    fetchMedia();
+  const deleteMedia = async (id) => {
+    if (!window.confirm("Permanently delete this media? This cannot be undone.")) return;
+    try {
+      await api.delete(`/gallery/${id}`);
+      setMedia(media.filter((m) => m._id !== id)); // Optimistic update
+    } catch (err) {
+      alert("Failed to delete");
+    }
   };
 
   return (
@@ -113,16 +117,15 @@ const ManageGallery = () => {
                 <div className="gallery-info">
                   <h3>{m.title}</h3>
 
-                  {m.isActive !== false ? (
+                  <div className="gallery-actions">
                     <button
-                      onClick={() => disableMedia(m._id)}
-                      className="danger"
+                      onClick={() => deleteMedia(m._id)}
+                      className="delete-btn"
+                      title="Delete Permanently"
                     >
-                      Disable
+                      🗑️
                     </button>
-                  ) : (
-                    <span className="status">Disabled</span>
-                  )}
+                  </div>
                 </div>
               </div>
             ))}
