@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { getUser } from "../auth/authUtils";
 import "../styles/sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, onClose }) => {
   const user = getUser();
   const location = useLocation();
 
@@ -35,31 +35,43 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className="sidebar">
-      {/* HEADER */}
-      <div className="sidebar-header">
-        <h2>Temple Portal</h2>
-        <p>{user?.role?.toUpperCase()}</p>
-      </div>
+    <>
+      {/* MOBILE BACKDROP */}
+      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
 
-      {/* MENU */}
-      <nav className="sidebar-menu">
-        {menu[user?.role]?.map((item) => {
-          const isActive = location.pathname === item.path;
+      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
+        {/* HEADER */}
+        <div className="sidebar-header">
+          <div>
+            <h2>Temple Portal</h2>
+            <p>{user?.role?.toUpperCase()}</p>
+          </div>
+          {/* CLOSE BTN (Mobile) */}
+          <button className="close-sidebar-btn" onClick={onClose}>
+            ✕
+          </button>
+        </div>
 
-          return (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`sidebar-link ${isActive ? "active" : ""}`}
-            >
-              <span>{item.label}</span>
-              <span className="arrow">→</span>
-            </Link>
-          );
-        })}
-      </nav>
-    </aside>
+        {/* MENU */}
+        <nav className="sidebar-menu">
+          {menu[user?.role]?.map((item) => {
+            const isActive = location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`sidebar-link ${isActive ? "active" : ""}`}
+                onClick={onClose} // Auto-close on mobile when link clicked
+              >
+                <span>{item.label}</span>
+                <span className="arrow">→</span>
+              </Link>
+            );
+          })}
+        </nav>
+      </aside>
+    </>
   );
 };
 

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { clearAuth, getUser } from "../auth/authUtils";
 import "../styles/navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ onToggleSidebar }) => {
   const navigate = useNavigate();
   const user = getUser();
 
@@ -15,8 +15,12 @@ const Navbar = () => {
     <div className="navbar">
       {/* LEFT */}
       <div className="navbar-left">
-        <h1>Temple Transparency System</h1>
-        <p className="tagline">Community-driven temple management</p>
+        {/* HAMBURGER (Mobile Only) */}
+        <button onClick={onToggleSidebar} className="hamburger-btn">
+          ☰
+        </button>
+        <h1>Temple System</h1>
+        <p className="tagline">Community-driven management</p>
       </div>
 
       {/* RIGHT */}

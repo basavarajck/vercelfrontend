@@ -6,11 +6,16 @@
     padding: 20px 16px;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
 }
 
 /* HEADER */
 .sidebar-header {
     margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sidebar-header h2 {
@@ -24,6 +29,16 @@
     color: #6b7280;
     margin-top: 4px;
     letter-spacing: 1px;
+}
+
+/* CLOSE BUTTON (Mobile Only) */
+.close-sidebar-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #4b5563;
 }
 
 /* MENU */
@@ -43,6 +58,7 @@
     justify-content: space-between;
     align-items: center;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .sidebar-link:hover {
@@ -59,4 +75,35 @@
 .sidebar-link .arrow {
     font-size: 12px;
     color: #9ca3af;
+}
+
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .close-sidebar-btn {
+        display: block;
+    }
+}
+
+/* BACKDROP OVERLAY */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
 }

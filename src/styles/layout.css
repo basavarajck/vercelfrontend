@@ -11,7 +11,8 @@
     flex: 1;
     display: flex;
     overflow: hidden;
-    /* 🔒 important */
+    position: relative;
+    /* Context for absolute sidebar */
 }
 
 /* CONTENT */
@@ -20,4 +21,11 @@
     padding: 24px;
     overflow-y: auto;
     background: #f9fafb;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .app-content {
+        padding: 16px;
+    }
 }
