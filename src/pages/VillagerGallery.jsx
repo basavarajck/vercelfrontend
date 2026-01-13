@@ -9,14 +9,15 @@ const VillagerGallery = () => {
   const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fallback high-quality temple images from Unsplash
+  // Fallback temple images
   const fallbackImages = [
-    { _id: "f1", title: "Temple Dawn", fileUrl: "https://images.unsplash.com/photo-1544735745-b81216c7db0c?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
-    { _id: "f2", title: "Ritual Lights", fileUrl: "https://images.unsplash.com/photo-1561053720-76cd73ff22c3?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
-    { _id: "f3", title: "Festival Colors", fileUrl: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
-    { _id: "f4", title: "Ancient Carvings", fileUrl: "https://images.unsplash.com/photo-1624446001478-f09623838634?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
-    { _id: "f5", title: "Spiritual Path", fileUrl: "https://images.unsplash.com/photo-1609348236104-e9029965935b?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
-    { _id: "f6", title: "Morning Prayer", fileUrl: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80", mediaType: "image" },
+    { _id: "1", title: "Temple View 1", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/image-1768320181949_kr5sp3", mediaType: "image" },
+    { _id: "2", title: "Temple View 2", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_up13ii", mediaType: "image" },
+    { _id: "3", title: "Temple View 3", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_2_eg7f8j", mediaType: "image" },
+    { _id: "4", title: "Temple View 4", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_3_bawkv4", mediaType: "image" },
+    { _id: "5", title: "Temple View 5", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_4_nneku8", mediaType: "image" },
+    { _id: "6", title: "Temple View 6", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_5_zfzfty", mediaType: "image" },
+    { _id: "7", title: "Temple View 7", fileUrl: "https://res.cloudinary.com/dcyjadpgm/image/upload/OIP_6_iutete", mediaType: "image" },
   ];
 
   useEffect(() => {

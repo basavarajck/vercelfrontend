@@ -23,7 +23,6 @@ const LandingPage = () => {
 
   return (
     <div className="landing">
-
       {/* NAVBAR */}
       <nav className="landing-nav glass">
         <div className="nav-logo">🏰 TempleSystem</div>
